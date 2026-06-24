@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { motion, useMotionValue, useTransform, useAnimation } from "framer-motion";
+import { motion, useMotionValue, useTransform, useAnimation, type PanInfo } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import { TESTIMONIALS } from "@/lib/constants";
 import {
@@ -58,7 +58,7 @@ function ShuffleCard({ card, indexFromTop, onSwipe }: CardProps) {
     });
   }, [indexFromTop, controls, dragX]);
 
-  const handleDragEnd = async (event: any, info: any) => {
+  const handleDragEnd = async (_event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     if (!isTop) return;
     const swipeThreshold = 120;
 

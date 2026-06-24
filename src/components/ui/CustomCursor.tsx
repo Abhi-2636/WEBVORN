@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, useSpring, useMotionValue } from "framer-motion";
 
 export default function CustomCursor() {
@@ -19,9 +19,12 @@ export default function CustomCursor() {
   const springYInner = useSpring(mouseY, springConfig);
 
   useEffect(() => {
-    // Detect touch device — hide cursor on touch
     const isTouchDev = window.matchMedia("(hover: none)").matches;
-    setIsTouch(isTouchDev);
+    if (isTouchDev !== isTouch) {
+      const touchTimer = window.setTimeout(() => setIsTouch(isTouchDev), 0);
+      return () => window.clearTimeout(touchTimer);
+    }
+
     if (isTouchDev) return;
 
     // Enable cursor:none CSS only after JS has loaded
@@ -60,7 +63,7 @@ export default function CustomCursor() {
       document.removeEventListener("mouseup", onUp);
       document.removeEventListener("mouseover", onHoverStart);
     };
-  }, [mouseX, mouseY]);
+  }, [isTouch, mouseX, mouseY]);
 
   if (isTouch) return null;
 

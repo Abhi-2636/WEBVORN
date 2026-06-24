@@ -9,8 +9,8 @@ interface TechEntry {
   readonly color: string;
 }
 
-// Create 3 copies for seamless looping on both rows
-function TechItem({ tech, i }: { tech: TechEntry; i: number }) {
+// Keep two copies so the marquee stays continuous without excessive repeats.
+function TechItem({ tech }: { tech: TechEntry }) {
   return (
     <div
       data-cursor="pointer"
@@ -42,10 +42,12 @@ function TechItem({ tech, i }: { tech: TechEntry; i: number }) {
 }
 
 export default function TechStack() {
-  // Triplicate for gap-free infinite loop
-  const row1 = [...TECH_STACK, ...TECH_STACK, ...TECH_STACK];
-  // Row 2 is same stack in a different order — offset by half
-  const row2 = [...TECH_STACK.slice(Math.floor(TECH_STACK.length / 2)), ...TECH_STACK.slice(0, Math.floor(TECH_STACK.length / 2)), ...TECH_STACK, ...TECH_STACK];
+  const offsetStack = [
+    ...TECH_STACK.slice(Math.floor(TECH_STACK.length / 2)),
+    ...TECH_STACK.slice(0, Math.floor(TECH_STACK.length / 2)),
+  ];
+  const row1 = [...TECH_STACK, ...TECH_STACK];
+  const row2 = [...offsetStack, ...offsetStack];
 
   return (
     <section
@@ -99,7 +101,7 @@ export default function TechStack() {
         <div className="flex overflow-hidden">
           <div className="flex animate-marquee">
             {row1.map((tech, i) => (
-              <TechItem key={`r1-${tech.name}-${i}`} tech={tech} i={i} />
+              <TechItem key={`r1-${tech.name}-${i}`} tech={tech} />
             ))}
           </div>
         </div>
@@ -108,7 +110,7 @@ export default function TechStack() {
         <div className="flex overflow-hidden">
           <div className="flex animate-marquee-reverse">
             {row2.map((tech, i) => (
-              <TechItem key={`r2-${tech.name}-${i}`} tech={tech} i={i} />
+              <TechItem key={`r2-${tech.name}-${i}`} tech={tech} />
             ))}
           </div>
         </div>
@@ -120,7 +122,7 @@ export default function TechStack() {
             style={{ animationDuration: "28s", animationDelay: "-5s" }}
           >
             {[...row1].reverse().map((tech, i) => (
-              <TechItem key={`r3-${tech.name}-${i}`} tech={tech} i={i} />
+              <TechItem key={`r3-${tech.name}-${i}`} tech={tech} />
             ))}
           </div>
         </div>

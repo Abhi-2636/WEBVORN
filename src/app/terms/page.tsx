@@ -75,7 +75,7 @@ export default function TermsPage() {
               animate="visible"
               className="space-y-8"
             >
-              {sections.map((sec, i) => (
+              {sections.map((sec) => (
                 <motion.div
                   key={sec.title}
                   variants={fadeInUp}

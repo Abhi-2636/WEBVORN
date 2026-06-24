@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import {
   motion,
   useMotionValue,
@@ -20,9 +20,12 @@ import {
   TrendingUp,
   Zap,
 } from "lucide-react";
+import Counter from "@/components/Counter";
 import { STATS } from "@/lib/constants";
 import { cardReveal, fadeInUp, sectionIntro, tapScale } from "@/lib/animations";
 import MagneticButton from "@/components/ui/MagneticButton";
+
+const heroHeadlineWords = "Launch polished web, app, and AI products that convert.".split(" ");
 
 const pipeline = [
   { label: "UX clarity", value: 94, color: "#34d399" },
@@ -42,41 +45,6 @@ const statIcons = [
   <Zap size={18} key="delivery" />,
   <Activity size={18} key="team" />,
 ] as const;
-
-function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const hasAnimated = useRef(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated.current) {
-          hasAnimated.current = true;
-          const duration = 1800;
-          const start = performance.now();
-          const animate = (now: number) => {
-            const progress = Math.min((now - start) / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            setCount(Math.floor(eased * value));
-            if (progress < 1) requestAnimationFrame(animate);
-          };
-          requestAnimationFrame(animate);
-        }
-      },
-      { threshold: 0.45 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [value]);
-
-  return (
-    <span ref={ref}>
-      {count}
-      {suffix}
-    </span>
-  );
-}
 
 function CommandCenterVisual() {
   const reducedMotion = useReducedMotion();
@@ -324,17 +292,6 @@ export default function Hero() {
 
       <div className="section-container relative z-10 w-full pb-16">
         <div className="relative">
-
-          {/* Desktop: 3D command center visual on right */}
-          <motion.div
-            style={{ y: visualY }}
-            className="pointer-events-none absolute -right-[12vw] top-8 z-0 hidden w-[62vw] max-w-[780px] xl:block"
-          >
-            <div className="pointer-events-auto">
-              <CommandCenterVisual />
-            </div>
-          </motion.div>
-
           {/* Left: text content with parallax */}
           <motion.div
             style={{ y: headlineY, opacity: headlineOpacity }}
@@ -357,11 +314,21 @@ export default function Hero() {
               {/* Headline with shiny gradient text */}
               <motion.h1
                 variants={fadeInUp}
-                className="mb-7 text-4xl font-bold leading-[1.06] sm:text-5xl md:text-6xl lg:text-[4.35rem]"
+                className="hero-title mb-7"
                 style={{ fontFamily: "var(--font-outfit)", color: "var(--color-text-primary)" }}
               >
-                Launch polished web, app, and AI products that{" "}
-                <span className="shiny-gradient-text">look premium and convert.</span>
+                {heroHeadlineWords.map((word, index) => (
+                  <motion.span
+                    key={`${word}-${index}`}
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 + index * 0.07, duration: 0.4 }}
+                    className={word === "convert." ? "shiny-gradient-text" : undefined}
+                    style={{ display: "inline-block", marginRight: "0.3em" }}
+                  >
+                    {word}
+                  </motion.span>
+                ))}
               </motion.h1>
 
               <motion.p
@@ -419,10 +386,14 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Mobile: visual below text */}
-          <div className="relative z-10 mt-10 xl:hidden">
-            <CommandCenterVisual />
-          </div>
+          <motion.div
+            style={{ y: visualY }}
+            className="relative z-10 mt-10 xl:pointer-events-none xl:absolute xl:-right-[12vw] xl:top-8 xl:z-0 xl:mt-0 xl:w-[62vw] xl:max-w-[780px]"
+          >
+            <div className="xl:pointer-events-auto">
+              <CommandCenterVisual />
+            </div>
+          </motion.div>
 
           {/* Stats grid */}
           <motion.div
@@ -451,9 +422,9 @@ export default function Hero() {
                   className="mb-1 text-2xl font-bold sm:text-3xl"
                   style={{ fontFamily: "var(--font-outfit)", color: "var(--color-text-primary)" }}
                 >
-                  <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                  <Counter target={stat.value} suffix={stat.suffix} />
                 </div>
-                <div className="text-xs font-medium sm:text-sm" style={{ color: "var(--color-text-secondary)" }}>
+                <div className="stat-label font-medium" style={{ color: "var(--color-text-secondary)" }}>
                   {stat.label}
                 </div>
               </motion.div>

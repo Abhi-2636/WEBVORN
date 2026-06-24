@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Menu, Moon, Sun, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
@@ -14,15 +15,18 @@ export default function Navbar() {
 
   useEffect(() => {
     const storedTheme = window.localStorage.getItem("webvorn-theme");
-    if (storedTheme === "dark" || storedTheme === "light") {
-      setTheme(storedTheme);
-      return;
-    }
+    const nextTheme =
+      storedTheme === "dark" || storedTheme === "light"
+        ? storedTheme
+        : window.matchMedia("(prefers-color-scheme: light)").matches
+          ? "light"
+          : "dark";
 
-    if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-      setTheme("light");
-    }
-  }, []);
+    if (nextTheme === theme) return;
+
+    const themeTimer = window.setTimeout(() => setTheme(nextTheme), 0);
+    return () => window.clearTimeout(themeTimer);
+  }, [theme]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -67,7 +71,7 @@ export default function Navbar() {
 
 
         <div className="section-container flex items-center justify-between gap-4">
-          <a
+          <Link
             href="/"
             className="group flex items-center gap-2.5 no-underline"
             id="navbar-logo"
@@ -96,7 +100,7 @@ export default function Navbar() {
             >
               Webvorn
             </span>
-          </a>
+          </Link>
 
           <div
             className="hidden items-center gap-1 rounded-full border px-1.5 py-1 lg:flex"

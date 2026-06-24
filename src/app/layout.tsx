@@ -1,29 +1,34 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Space_Mono, Syne } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
 import { FAQS, CONTACT_INFO } from "@/lib/constants";
 
+const SITE_URL = "https://webvorn-2636.web.app";
+
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["700", "800"],
+  variable: "--font-syne",
+  display: "swap",
+});
+
 const inter = Inter({
   subsets: ["latin"],
+  weight: ["400", "500"],
   variable: "--font-inter",
   display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const spaceMono = Space_Mono({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  display: "swap",
-});
-
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-plus-jakarta",
+  weight: ["400", "700"],
+  variable: "--font-mono",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://webvorn.com"),
+  metadataBase: new URL(SITE_URL),
   title: "Webvorn — Building Digital Experiences That Drive Growth",
   description:
     "Webvorn is a premium digital agency in India specializing in web development, UI/UX design, mobile apps, AI integration, and branding. Transform your ideas into powerful digital products.",
@@ -44,7 +49,7 @@ export const metadata: Metadata = {
     title: "Webvorn — Building Digital Experiences That Drive Growth",
     description:
       "Premium digital agency helping startups and businesses grow with world-class web development, design, and AI solutions.",
-    url: "https://webvorn.com",
+    url: SITE_URL,
     siteName: "Webvorn",
     images: [
       {
@@ -79,8 +84,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Webvorn",
-    "url": "https://webvorn.com",
-    "logo": "https://webvorn.com/favicon.ico",
+    "url": SITE_URL,
+    "logo": `${SITE_URL}/favicon.ico`,
     "sameAs": [
       CONTACT_INFO.linkedin,
       CONTACT_INFO.instagram,
@@ -98,7 +103,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Webvorn",
-    "url": "https://webvorn.com"
+    "url": SITE_URL
   };
 
   const jsonLdFaq = {
@@ -115,7 +120,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" data-theme="dark" className={`${inter.variable} ${spaceGrotesk.variable} ${plusJakarta.variable}`} suppressHydrationWarning>
+    <html lang="en" data-theme="dark" className={`${syne.variable} ${inter.variable} ${spaceMono.variable}`} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{

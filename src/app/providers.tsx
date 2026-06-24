@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, type ReactNode } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Lenis from "lenis";
+import { usePathname } from "next/navigation";
 import CustomCursor from "@/components/ui/CustomCursor";
 import FloatingParticles from "@/components/ui/FloatingParticles";
 import MouseGradient from "@/components/ui/MouseGradient";
@@ -9,6 +11,8 @@ import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
 import LoadingScreen from "@/components/layout/LoadingScreen";
 
 export default function Providers({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+
   useEffect(() => {
     // Lenis smooth scroll
     const lenis = new Lenis({
@@ -42,7 +46,18 @@ export default function Providers({ children }: { children: ReactNode }) {
       <ScrollProgressBar />
 
       {/* Page content */}
-      <div style={{ position: "relative", zIndex: 2 }}>{children}</div>
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.div
+          key={pathname}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.25 }}
+          style={{ position: "relative", zIndex: 2 }}
+        >
+          {children}
+        </motion.div>
+      </AnimatePresence>
     </>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Users, Target, Heart, Award, Shield, CheckCircle } from "lucide-react";
+import { Users, Target, Heart, Award, Shield } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { fadeInUp, staggerContainer, tapScale } from "@/lib/animations";

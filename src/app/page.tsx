@@ -11,6 +11,7 @@ import Pricing from "@/components/sections/Pricing";
 import FAQ from "@/components/sections/FAQ";
 import CTA from "@/components/sections/CTA";
 import Blog from "@/components/sections/Blog";
+import FadeIn from "@/components/ui/FadeIn";
 
 function SectionDivider() {
   return <div className="section-divider" />;
@@ -23,25 +24,45 @@ export default function Home() {
       <main>
         <Hero />
         <SectionDivider />
-        <Services />
+        <FadeIn delay={0.05}>
+          <Services />
+        </FadeIn>
         <SectionDivider />
-        <WhyChoose />
+        <FadeIn delay={0.05}>
+          <WhyChoose />
+        </FadeIn>
         <SectionDivider />
-        <Portfolio />
+        <FadeIn delay={0.05}>
+          <Portfolio />
+        </FadeIn>
         <SectionDivider />
-        <Process />
+        <FadeIn delay={0.05}>
+          <Process />
+        </FadeIn>
         <SectionDivider />
-        <TechStack />
+        <FadeIn delay={0.05}>
+          <TechStack />
+        </FadeIn>
         <SectionDivider />
-        <Testimonials />
+        <FadeIn delay={0.05}>
+          <Testimonials />
+        </FadeIn>
         <SectionDivider />
-        <Pricing />
+        <FadeIn delay={0.05}>
+          <Pricing />
+        </FadeIn>
         <SectionDivider />
-        <FAQ />
+        <FadeIn delay={0.05}>
+          <FAQ />
+        </FadeIn>
         <SectionDivider />
-        <Blog />
+        <FadeIn delay={0.05}>
+          <Blog />
+        </FadeIn>
         <SectionDivider />
-        <CTA />
+        <FadeIn delay={0.05}>
+          <CTA />
+        </FadeIn>
       </main>
       <Footer />
     </>

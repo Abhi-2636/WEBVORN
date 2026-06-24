@@ -282,6 +282,7 @@ export default function Footer() {
               />
               <button
                 type="submit"
+                aria-label="Subscribe"
                 className="px-4 py-2.5 rounded-xl cursor-pointer border-none transition-all duration-300 flex items-center justify-center"
                 style={{
                   background: "var(--gradient-primary)",

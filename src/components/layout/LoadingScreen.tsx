@@ -6,30 +6,39 @@ import { gsap } from "gsap";
 
 const BURST_COLORS = ["#34d399", "#22d3ee", "#fbbf24", "#fb7185", "#9b7cff"];
 const BURST_COUNT = 12;
+const BURST_PARTICLES = Array.from({ length: BURST_COUNT }, (_, i) => {
+  const angle = (i / BURST_COUNT) * 360;
+  const dist = 50 + Math.random() * 50;
+  const rad = (angle * Math.PI) / 180;
+
+  return {
+    id: i,
+    px: `${Math.cos(rad) * dist}px`,
+    py: `${Math.sin(rad) * dist}px`,
+    color: BURST_COLORS[i % BURST_COLORS.length],
+    width: `${4 + Math.random() * 5}px`,
+    height: `${4 + Math.random() * 5}px`,
+    delay: `${Math.random() * 0.1}s`,
+  };
+});
 
 function BurstParticles({ active }: { active: boolean }) {
   if (!active) return null;
   return (
     <>
-      {Array.from({ length: BURST_COUNT }).map((_, i) => {
-        const angle = (i / BURST_COUNT) * 360;
-        const dist = 50 + Math.random() * 50;
-        const rad = (angle * Math.PI) / 180;
-        const px = `${Math.cos(rad) * dist}px`;
-        const py = `${Math.sin(rad) * dist}px`;
-        const color = BURST_COLORS[i % BURST_COLORS.length];
+      {BURST_PARTICLES.map((particle) => {
         return (
           <span
-            key={i}
+            key={particle.id}
             className="burst-particle"
             style={
               {
-                "--px": px,
-                "--py": py,
-                background: color,
-                width: `${4 + Math.random() * 5}px`,
-                height: `${4 + Math.random() * 5}px`,
-                animationDelay: `${Math.random() * 0.1}s`,
+                "--px": particle.px,
+                "--py": particle.py,
+                background: particle.color,
+                width: particle.width,
+                height: particle.height,
+                animationDelay: particle.delay,
               } as React.CSSProperties
             }
           />
@@ -51,26 +60,36 @@ export default function LoadingScreen() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Skip on revisit (same session)
     if (window.sessionStorage.getItem("webvorn-loaded") === "true") {
-      setLoading(false);
-      return;
+      const skipTimer = window.setTimeout(() => setLoading(false), 0);
+      return () => window.clearTimeout(skipTimer);
     }
+
+    const fallbackTimer = window.setTimeout(() => {
+      window.sessionStorage.setItem("webvorn-loaded", "true");
+      setLoading(false);
+    }, 2500);
 
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (prefersReduced) {
-      window.sessionStorage.setItem("webvorn-loaded", "true");
-      setTimeout(() => setLoading(false), 400);
-      return;
+      const reducedTimer = window.setTimeout(() => {
+        window.sessionStorage.setItem("webvorn-loaded", "true");
+        setLoading(false);
+      }, 400);
+      return () => {
+        window.clearTimeout(fallbackTimer);
+        window.clearTimeout(reducedTimer);
+      };
     }
 
     // GSAP timeline
     const tl = gsap.timeline({
       onComplete: () => {
+        window.clearTimeout(fallbackTimer);
         setBurst(true);
         window.sessionStorage.setItem("webvorn-loaded", "true");
-        setTimeout(() => setLoading(false), 500);
+        window.setTimeout(() => setLoading(false), 500);
       },
     });
 
@@ -90,7 +109,7 @@ export default function LoadingScreen() {
     // 4. Animate progress counter separately via RAF
     const start = performance.now();
     const duration = 800;
-    let raf: number;
+    let raf = 0;
 
     const animateProgress = (now: number) => {
       const p = Math.min((now - start) / duration, 1);
@@ -104,11 +123,13 @@ export default function LoadingScreen() {
     };
 
     // Slight delay to match GSAP timeline timing
-    setTimeout(() => {
+    const progressTimer = window.setTimeout(() => {
       raf = requestAnimationFrame(animateProgress);
     }, 400);
 
     return () => {
+      window.clearTimeout(fallbackTimer);
+      window.clearTimeout(progressTimer);
       tl.kill();
       cancelAnimationFrame(raf);
     };

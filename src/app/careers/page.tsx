@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Briefcase, MapPin, Clock, ArrowRight, Zap, Coffee, Heart, Globe } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { fadeInUp, staggerContainer, tapScale } from "@/lib/animations";
+import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 export default function CareersPage() {
   const jobs = [

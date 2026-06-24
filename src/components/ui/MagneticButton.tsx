@@ -7,14 +7,12 @@ interface MagneticButtonProps {
   children: ReactNode;
   className?: string;
   strength?: number; // pull strength in px (default 10)
-  as?: "div" | "span";
 }
 
 export default function MagneticButton({
   children,
   className = "",
   strength = 10,
-  as: Tag = "div",
 }: MagneticButtonProps) {
   const ref = useRef<HTMLDivElement>(null);
 
