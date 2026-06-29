@@ -70,7 +70,7 @@ export default function CTA() {
                 <motion.a
                   whileHover={{ y: -3 }}
                   whileTap={tapScale}
-                  href={`https://wa.me/${CONTACT_INFO.whatsappRaw}?text=Hi%20Webvorn!%20I'm%20interested%20in%20your%20services.`}
+                  href={`https://wa.me/${CONTACT_INFO.whatsappRaw}?text=Hi%20Shree%20Shyam%20Living!%20I'm%20interested%20in%20booking%20a%20room.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary text-base"
@@ -78,7 +78,7 @@ export default function CTA() {
                 >
                   <span className="flex items-center gap-2">
                     <MessageCircle size={20} />
-                    Book a Free Consultation
+                    Book a Room Now
                   </span>
                 </motion.a>
                 <motion.a

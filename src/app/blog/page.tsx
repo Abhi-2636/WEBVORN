@@ -4,9 +4,9 @@ import Footer from "@/components/layout/Footer";
 import BlogContent from "./BlogContent";
 
 export const metadata: Metadata = {
-  title: "Blog — Webvorn | Insights on Web Development, Design & AI",
+  title: "Blog — Shree Shyam Living | Student Accommodation Insights",
   description:
-    "Read the latest articles on web development, UI/UX design, AI integration, and digital growth strategies from the Webvorn team.",
+    "Read the latest articles on student life, accommodation guides, amenities, and campus updates from the Shree Shyam Living team.",
 };
 
 export default function BlogPage() {

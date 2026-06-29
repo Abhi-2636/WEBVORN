@@ -122,10 +122,10 @@ export default function BlogDetailContent({ post, content, otherPosts }: BlogDet
                   </div>
                   <div>
                     <div className="text-xs font-semibold" style={{ color: "var(--color-text-primary)" }}>
-                      Written by Webvorn Team
+                      Written by Shree Shyam Living Team
                     </div>
                     <div className="text-[10px]" style={{ color: "var(--color-text-secondary)" }}>
-                      Digital Product Agency
+                      Student Accommodation
                     </div>
                   </div>
                 </div>

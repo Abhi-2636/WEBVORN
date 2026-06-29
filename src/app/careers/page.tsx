@@ -77,7 +77,7 @@ export default function CareersPage() {
                 className="text-sm font-semibold uppercase tracking-widest mb-4 block"
                 style={{ color: "var(--color-accent-purple)" }}
               >
-                Join Webvorn
+                Join Shree Shyam Living
               </motion.span>
               <motion.h1
                 variants={fadeInUp}
@@ -154,7 +154,7 @@ export default function CareersPage() {
                 Open Positions
               </h2>
               <p style={{ color: "var(--color-text-secondary)" }}>
-                Explore open positions and kickstart your career with Webvorn.
+                Explore open positions and kickstart your career with Shree Shyam Living.
               </p>
             </div>
 
@@ -205,7 +205,7 @@ export default function CareersPage() {
 
                   <div>
                     <a
-                      href={`mailto:careers@webvorn.com?subject=Application%20for%20${encodeURIComponent(job.title)}`}
+                      href={`mailto:ssliving.official@gmail.com?subject=Application%20for%20${encodeURIComponent(job.title)}`}
                       className="btn-secondary w-full md:w-auto text-sm group-hover:bg-[rgba(139,92,246,0.15)] group-hover:text-[var(--color-accent-purple)] group-hover:border-[var(--color-accent-purple)] transition-all duration-300"
                     >
                       <span className="flex items-center justify-center gap-1">
@@ -229,10 +229,10 @@ export default function CareersPage() {
                 Don&apos;t see your role?
               </h3>
               <p className="text-sm mb-4" style={{ color: "var(--color-text-secondary)" }}>
-                We are always looking for passionate builders. Send your resume and portfolio to careers@webvorn.com.
+                We are always looking for passionate people. Send your resume and details to ssliving.official@gmail.com.
               </p>
               <a
-                href="mailto:careers@webvorn.com?subject=General%20Application"
+                href="mailto:ssliving.official@gmail.com?subject=General%20Application"
                 className="text-sm font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all duration-200"
                 style={{ color: "var(--color-accent-purple)" }}
               >

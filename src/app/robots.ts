@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/_next/"],
     },
-    sitemap: "https://webvorn-2636.web.app/sitemap.xml",
+    sitemap: "https://shreeshyamliving.com/sitemap.xml",
   };
 }

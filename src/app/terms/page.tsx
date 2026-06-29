@@ -10,17 +10,17 @@ export default function TermsPage() {
     {
       title: "1. Acceptance of Terms",
       content:
-        "By accessing or using the Webvorn website, you agree to comply with and be bound by these Terms of Service. If you do not agree to these terms, please do not use our website.",
+        "By accessing or using the Shree Shyam Living website, you agree to comply with and be bound by these Terms of Service. If you do not agree to these terms, please do not use our website.",
     },
     {
       title: "2. Services Offered",
       content:
-        "Webvorn provides custom web development, UI/UX design, mobile app development, branding, and AI integration services. All service agreements are subject to separate formal contract terms.",
+        "Shree Shyam Living provides premium student housing and accommodation services near LPU. All booking agreements are subject to separate formal contract terms.",
     },
     {
       title: "3. Intellectual Property",
       content:
-        "All content, design components, branding, graphics, and code featured on this website are the intellectual property of Webvorn or its licensors. Unauthorized copying, modification, or distribution is prohibited.",
+        "All content, design components, branding, graphics, and code featured on this website are the intellectual property of Shree Shyam Living or its licensors. Unauthorized copying, modification, or distribution is prohibited.",
     },
     {
       title: "4. User Conduct",
@@ -30,7 +30,7 @@ export default function TermsPage() {
     {
       title: "5. Limitation of Liability",
       content:
-        "Webvorn provides this website on an 'as-is' and 'as-available' basis. We make no representations or warranties of any kind and are not liable for any direct or indirect damages arising from your use of this website.",
+        "Shree Shyam Living provides this website on an 'as-is' and 'as-available' basis. We make no representations or warranties of any kind and are not liable for any direct or indirect damages arising from your use of this website.",
     },
   ];
 

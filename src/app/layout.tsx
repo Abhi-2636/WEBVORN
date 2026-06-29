@@ -29,34 +29,36 @@ const spaceMono = Space_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Webvorn — Building Digital Experiences That Drive Growth",
+  title: "Shree Shyam Living | Premium Student Accommodation Near LPU",
   description:
-    "Webvorn is a premium digital agency in India specializing in web development, UI/UX design, mobile apps, AI integration, and branding. Transform your ideas into powerful digital products.",
+    "Shree Shyam Living offers premium student accommodation near LPU with fully furnished rooms, high-speed Wi-Fi, meals, laundry, 24/7 security, and modern amenities.",
   keywords: [
-    "digital agency India",
-    "web development",
-    "UI/UX design",
-    "mobile app development",
-    "AI integration",
-    "React",
-    "Next.js",
-    "startup website",
-    "premium web design",
-    "Webvorn",
+    "room near lpu",
+    "rooms near lpu",
+    "best room near lpu",
+    "PG near LPU",
+    "shree shyam living",
+    "SS LIVING",
+    "student housing",
+    "paying guest",
+    "LPU accommodation",
+    "furnished rooms",
+    "Phagwara PG",
+    "hostel near lovely professional university",
   ],
-  authors: [{ name: "Webvorn" }],
+  authors: [{ name: "Shree Shyam Living" }],
   openGraph: {
-    title: "Webvorn — Building Digital Experiences That Drive Growth",
+    title: "Shree Shyam Living | Premium Student Accommodation Near LPU",
     description:
-      "Premium digital agency helping startups and businesses grow with world-class web development, design, and AI solutions.",
+      "Shree Shyam Living offers premium student accommodation near LPU with fully furnished rooms, high-speed Wi-Fi, meals, laundry, 24/7 security, and modern amenities.",
     url: SITE_URL,
-    siteName: "Webvorn",
+    siteName: "Shree Shyam Living",
     images: [
       {
         url: "/images/og-image.png",
         width: 1200,
-        height: 1200,
-        alt: "Webvorn — Building Digital Experiences That Drive Growth",
+        height: 630,
+        alt: "Shree Shyam Living | Premium Student Accommodation Near LPU",
       },
     ],
     type: "website",
@@ -64,9 +66,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Webvorn — Building Digital Experiences That Drive Growth",
+    title: "Shree Shyam Living | Premium Student Accommodation Near LPU",
     description:
-      "Premium digital agency helping startups and businesses grow with world-class web development, design, and AI solutions.",
+      "Shree Shyam Living offers premium student accommodation near LPU with fully furnished rooms, high-speed Wi-Fi, meals, laundry, 24/7 security, and modern amenities.",
     images: ["/images/og-image.png"],
   },
   robots: {
@@ -83,26 +85,26 @@ export default function RootLayout({
   const jsonLdOrg = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Webvorn",
+    "name": "Shree Shyam Living",
     "url": SITE_URL,
-    "logo": `${SITE_URL}/favicon.ico`,
+    "logo": `${SITE_URL}/logo.png`,
     "sameAs": [
-      CONTACT_INFO.linkedin,
-      CONTACT_INFO.instagram,
-      CONTACT_INFO.github
+      "https://www.instagram.com/shree_shyam_living?igsh=bmEwZ2F3OHkyZ3pj&utm_source=qr",
+      "https://www.facebook.com/people/Shree-Shyam-Living/61560784594052/",
+      "https://wa.me/919142272776"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": CONTACT_INFO.phoneRaw,
+      "telephone": "+91-91422-72776",
       "contactType": "customer service",
-      "email": CONTACT_INFO.email
+      "email": "ssliving.official@gmail.com"
     }
   };
 
   const jsonLdWebsite = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Webvorn",
+    "name": "Shree Shyam Living",
     "url": SITE_URL
   };
 
@@ -126,7 +128,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                if (sessionStorage.getItem('webvorn-loaded') === 'true') {
+                if (sessionStorage.getItem('ssliving-loaded') === 'true') {
                   document.documentElement.classList.add('loading-done');
                 }
               } catch (e) {}

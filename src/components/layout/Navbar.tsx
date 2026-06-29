@@ -14,7 +14,7 @@ export default function Navbar() {
   const [theme, setTheme] = useState<"dark" | "light">("dark");
 
   useEffect(() => {
-    const storedTheme = window.localStorage.getItem("webvorn-theme");
+    const storedTheme = window.localStorage.getItem("ssliving-theme");
     const nextTheme =
       storedTheme === "dark" || storedTheme === "light"
         ? storedTheme
@@ -37,7 +37,7 @@ export default function Navbar() {
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
-    window.localStorage.setItem("webvorn-theme", theme);
+    window.localStorage.setItem("ssliving-theme", theme);
   }, [theme]);
 
   useEffect(() => {
@@ -75,7 +75,7 @@ export default function Navbar() {
             href="/"
             className="group flex items-center gap-2.5 no-underline"
             id="navbar-logo"
-            aria-label="Webvorn home"
+            aria-label="Shree Shyam Living home"
           >
             <div
               className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded"
@@ -88,7 +88,7 @@ export default function Navbar() {
                 className="relative z-10 text-lg font-bold text-[#07100d]"
                 style={{ fontFamily: "var(--font-outfit)" }}
               >
-                W
+                S
               </span>
             </div>
             <span
@@ -98,7 +98,7 @@ export default function Navbar() {
                 fontFamily: "var(--font-outfit)",
               }}
             >
-              Webvorn
+              Shree Shyam Living
             </span>
           </Link>
 
@@ -157,7 +157,7 @@ export default function Navbar() {
                 data-cursor="pointer"
               >
                 <span className="flex items-center gap-2">
-                  Start Project <ArrowRight size={15} />
+                  Book Now <ArrowRight size={15} />
                 </span>
               </motion.a>
             </MagneticButton>
@@ -229,7 +229,7 @@ export default function Navbar() {
                   onClick={() => setMobileOpen(false)}
                 >
                   <span className="flex items-center justify-center gap-2">
-                    Start Your Project <ArrowRight size={16} />
+                    Book Your Room <ArrowRight size={16} />
                   </span>
                 </a>
               </div>

@@ -107,7 +107,7 @@ export default function Footer() {
                   className="text-white font-bold text-lg"
                   style={{ fontFamily: "var(--font-outfit)" }}
                 >
-                  W
+                  S
                 </span>
               </div>
               <span
@@ -117,16 +117,16 @@ export default function Footer() {
                   color: "var(--color-text-primary)",
                 }}
               >
-                Webvorn
+                Shree Shyam Living
               </span>
             </div>
             <p
               className="text-sm leading-relaxed mb-6 max-w-xs"
               style={{ color: "var(--color-text-secondary)" }}
             >
-              Building digital experiences that drive growth. Premium web
-              development, design, and AI solutions for startups and businesses
-              in India.
+              Shree Shyam Living offers premium student accommodation near LPU with
+              fully furnished rooms, high-speed Wi-Fi, meals, laundry, 24/7
+              security, and modern amenities.
             </p>
             <div className="flex gap-2.5">
               {FOOTER_LINKS.social.map((s) => (
@@ -252,7 +252,7 @@ export default function Footer() {
               className="text-sm mb-5 leading-relaxed"
               style={{ color: "var(--color-text-secondary)" }}
             >
-              Get the latest insights on web development, design, and AI
+              Get the latest insights on student accommodation and living
               delivered to your inbox.
             </p>
             <form
@@ -311,7 +311,7 @@ export default function Footer() {
           className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm"
           style={{ color: "var(--color-text-muted)" }}
         >
-          <p>© 2026 Webvorn. All Rights Reserved.</p>
+          <p>© 2026 Shree Shyam Living. All Rights Reserved.</p>
           <div className="flex gap-6">
             <a
               href="/privacy"
