@@ -4,7 +4,7 @@ import "./globals.css";
 import Providers from "./providers";
 import { FAQS, CONTACT_INFO } from "@/lib/constants";
 
-const SITE_URL = "https://webvorn-2636.web.app";
+const SITE_URL = "https://shreeshyamliving-333e8.web.app";
 
 const syne = Syne({
   subsets: ["latin"],
