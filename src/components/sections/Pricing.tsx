@@ -37,16 +37,16 @@ export default function Pricing() {
               color: "var(--color-text-primary)",
             }}
           >
-            Affordable plans with{" "}
-            <span className="gradient-text">premium amenities.</span>
+            Transparent scopes with{" "}
+            <span className="gradient-text">room to customize.</span>
           </motion.h2>
           <motion.p
             variants={fadeInUp}
             className="text-base md:text-lg"
             style={{ color: "var(--color-text-secondary)" }}
           >
-            Refined student accommodation pricing near LPU. Find a perfect room
-            that fits your requirements and budget.
+            India-focused pricing for premium delivery. Each quote is refined
+            after a discovery call so you only pay for the build you need.
           </motion.p>
         </motion.div>
 
@@ -158,7 +158,7 @@ export default function Pricing() {
                   id={`pricing-cta-${plan.name.toLowerCase()}`}
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
-                    Book Your Room <ArrowRight size={16} />
+                    Get Custom Quote <ArrowRight size={16} />
                   </span>
                 </motion.a>
               </motion.article>

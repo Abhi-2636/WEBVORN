@@ -10,12 +10,12 @@ export default function PrivacyPage() {
     {
       title: "1. Information We Collect",
       content:
-        "We collect information that you voluntarily provide to us when you fill out contact forms, apply for careers, or communicate with us directly. This may include your name, email address, company name, phone number, and accommodation requirements.",
+        "We collect information that you voluntarily provide to us when you fill out contact forms, apply for careers, or communicate with us directly. This may include your name, email address, company name, phone number, and project requirements.",
     },
     {
       title: "2. How We Use Your Information",
       content:
-        "We use the collected information to respond to your inquiries, deliver our premium student housing and accommodation services, process booking applications, and send newsletter updates if you opt-in. We do not sell or lease your personal information to third parties.",
+        "We use the collected information to respond to your inquiries, deliver our digital design and development services, process applications, and send newsletter updates if you opt-in. We do not sell or lease your personal information to third parties.",
     },
     {
       title: "3. Cookies and Tracking",

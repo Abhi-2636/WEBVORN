@@ -32,19 +32,19 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 const serviceMeta = [
-  { accent: "#34d399", outcome: "Comfortable Stay", timeline: "Standard Rooms" },
-  { accent: "#22d3ee", outcome: "24/7 Connected", timeline: "High-Speed" },
-  { accent: "#fbbf24", outcome: "Nutritious Meals", timeline: "Daily Service" },
-  { accent: "#fb7185", outcome: "Safe Environment", timeline: "CCTV Enabled" },
-  { accent: "#c4b5fd", outcome: "Clean Living", timeline: "Daily Cleaning" },
-  { accent: "#60a5fa", outcome: "Always Powered", timeline: "Full Backup" },
-  { accent: "#f97316", outcome: "Hygienic Washing", timeline: "On-Demand" },
+  { accent: "#34d399", outcome: "Revenue-ready", timeline: "2-6 weeks" },
+  { accent: "#22d3ee", outcome: "Sharper UX", timeline: "5-12 days" },
+  { accent: "#fbbf24", outcome: "Native feel", timeline: "3-8 weeks" },
+  { accent: "#fb7185", outcome: "AI workflows", timeline: "1-4 weeks" },
+  { accent: "#c4b5fd", outcome: "Brand system", timeline: "4-10 days" },
+  { accent: "#60a5fa", outcome: "Search growth", timeline: "ongoing" },
+  { accent: "#f97316", outcome: "Motion assets", timeline: "1-3 weeks" },
 ] as const;
 
 const proofPoints = [
-  "Premium Rooms",
-  "Delicious & Healthy Meals",
-  "Secure & Student-Friendly",
+  "Strategy before pixels",
+  "Figma to production handoff",
+  "Performance and SEO built in",
 ] as const;
 
 export default function Services() {
@@ -71,8 +71,8 @@ export default function Services() {
                 color: "var(--color-text-primary)",
               }}
             >
-              Premium student living with{" "}
-              <span className="gradient-text">home-like comfort.</span>
+              End-to-end digital builds with{" "}
+              <span className="gradient-text">product-grade polish.</span>
             </motion.h2>
           </motion.div>
 
@@ -88,8 +88,8 @@ export default function Services() {
               className="mb-5 text-base leading-relaxed md:text-lg"
               style={{ color: "var(--color-text-secondary)" }}
             >
-              Choose Shree Shyam Living for fully furnished rooms, premium meals,
-              laundry services, high-speed Wi-Fi, and 24/7 security near LPU.
+              Choose a single service or combine strategy, design, engineering,
+              AI, motion, and growth into one launch plan.
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-3">
               {proofPoints.map((point) => (

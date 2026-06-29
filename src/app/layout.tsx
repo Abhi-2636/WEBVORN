@@ -29,36 +29,34 @@ const spaceMono = Space_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Shree Shyam Living | Premium Student Accommodation Near LPU",
+  title: "Webvorn — Building Digital Experiences That Drive Growth",
   description:
-    "Shree Shyam Living offers premium student accommodation near LPU with fully furnished rooms, high-speed Wi-Fi, meals, laundry, 24/7 security, and modern amenities.",
+    "Webvorn is a premium digital agency in India specializing in web development, UI/UX design, mobile apps, AI integration, and branding. Transform your ideas into powerful digital products.",
   keywords: [
-    "room near lpu",
-    "rooms near lpu",
-    "best room near lpu",
-    "PG near LPU",
-    "shree shyam living",
-    "SS LIVING",
-    "student housing",
-    "paying guest",
-    "LPU accommodation",
-    "furnished rooms",
-    "Phagwara PG",
-    "hostel near lovely professional university",
+    "digital agency India",
+    "web development",
+    "UI/UX design",
+    "mobile app development",
+    "AI integration",
+    "React",
+    "Next.js",
+    "startup website",
+    "premium web design",
+    "Webvorn",
   ],
-  authors: [{ name: "Shree Shyam Living" }],
+  authors: [{ name: "Webvorn" }],
   openGraph: {
-    title: "Shree Shyam Living | Premium Student Accommodation Near LPU",
+    title: "Webvorn — Building Digital Experiences That Drive Growth",
     description:
-      "Shree Shyam Living offers premium student accommodation near LPU with fully furnished rooms, high-speed Wi-Fi, meals, laundry, 24/7 security, and modern amenities.",
+      "Premium digital agency helping startups and businesses grow with world-class web development, design, and AI solutions.",
     url: SITE_URL,
-    siteName: "Shree Shyam Living",
+    siteName: "Webvorn",
     images: [
       {
         url: "/images/og-image.png",
         width: 1200,
-        height: 630,
-        alt: "Shree Shyam Living | Premium Student Accommodation Near LPU",
+        height: 1200,
+        alt: "Webvorn — Building Digital Experiences That Drive Growth",
       },
     ],
     type: "website",
@@ -66,9 +64,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shree Shyam Living | Premium Student Accommodation Near LPU",
+    title: "Webvorn — Building Digital Experiences That Drive Growth",
     description:
-      "Shree Shyam Living offers premium student accommodation near LPU with fully furnished rooms, high-speed Wi-Fi, meals, laundry, 24/7 security, and modern amenities.",
+      "Premium digital agency helping startups and businesses grow with world-class web development, design, and AI solutions.",
     images: ["/images/og-image.png"],
   },
   robots: {
@@ -85,26 +83,26 @@ export default function RootLayout({
   const jsonLdOrg = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Shree Shyam Living",
+    "name": "Webvorn",
     "url": SITE_URL,
-    "logo": `${SITE_URL}/logo.png`,
+    "logo": `${SITE_URL}/favicon.ico`,
     "sameAs": [
-      "https://www.instagram.com/shree_shyam_living?igsh=bmEwZ2F3OHkyZ3pj&utm_source=qr",
-      "https://www.facebook.com/people/Shree-Shyam-Living/61560784594052/",
-      "https://wa.me/919142272776"
+      CONTACT_INFO.linkedin,
+      CONTACT_INFO.instagram,
+      CONTACT_INFO.github
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-91422-72776",
+      "telephone": CONTACT_INFO.phoneRaw,
       "contactType": "customer service",
-      "email": "ssliving.official@gmail.com"
+      "email": CONTACT_INFO.email
     }
   };
 
   const jsonLdWebsite = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Shree Shyam Living",
+    "name": "Webvorn",
     "url": SITE_URL
   };
 
@@ -128,7 +126,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                if (sessionStorage.getItem('ssliving-loaded') === 'true') {
+                if (sessionStorage.getItem('webvorn-loaded') === 'true') {
                   document.documentElement.classList.add('loading-done');
                 }
               } catch (e) {}

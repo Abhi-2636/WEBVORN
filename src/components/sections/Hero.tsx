@@ -90,7 +90,7 @@ function CommandCenterVisual() {
           <span className="screen-dot" style={{ "--dot-color": "#fbbf24" } as React.CSSProperties} />
           <span className="screen-dot" style={{ "--dot-color": "#34d399" } as React.CSSProperties} />
           <span className="ml-3 text-xs font-medium" style={{ color: "var(--color-text-muted)" }}>
-            ssliving.os / rooms
+            webvorn.os / launch-room
           </span>
         </div>
 
@@ -336,9 +336,9 @@ export default function Hero() {
                 className="mb-8 max-w-2xl text-base leading-relaxed sm:text-lg md:text-xl"
                 style={{ color: "var(--color-text-secondary)" }}
               >
-                Shree Shyam Living offers premium student accommodation near LPU with
-                fully furnished rooms, high-speed Wi-Fi, meals, laundry, 24/7
-                security, and modern amenities.
+                Webvorn blends product strategy, high-end UI/UX, full-stack
+                engineering, and automation into a fast delivery system for
+                startups and growing businesses.
               </motion.p>
 
               {/* Highlight pills */}

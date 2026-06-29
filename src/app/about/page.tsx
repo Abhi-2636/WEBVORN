@@ -47,7 +47,7 @@ export default function AboutPage() {
                 className="text-sm font-semibold uppercase tracking-widest mb-4 block"
                 style={{ color: "var(--color-accent-purple)" }}
               >
-                About Shree Shyam Living
+                About Webvorn
               </motion.span>
               <motion.h1
                 variants={fadeInUp}
@@ -61,7 +61,7 @@ export default function AboutPage() {
                 className="text-lg leading-relaxed"
                 style={{ color: "var(--color-text-secondary)" }}
               >
-                Shree Shyam Living is a premier student housing platform based near LPU, Phagwara. We offer fully furnished rooms, high-speed Wi-Fi, home-like meals, daily housekeeping, and 24/7 security designed to provide students with a comfortable and secure living experience.
+                Webvorn is a next-generation digital agency based in India. We design, build, and scale world-class web applications, mobile apps, and custom AI integrations that drive growth and wow users.
               </motion.p>
             </motion.div>
 

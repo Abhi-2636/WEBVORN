@@ -4,7 +4,7 @@ import { PORTFOLIO, BLOG_POSTS } from "@/lib/constants";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://shreeshyamliving.com";
+  const baseUrl = "https://webvorn-2636.web.app";
 
   // Static routes
   const staticRoutes = [

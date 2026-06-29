@@ -31,10 +31,10 @@ const iconMap: Record<string, React.ReactNode> = {
 const accents = ["#34d399", "#22d3ee", "#fbbf24", "#fb7185", "#c4b5fd", "#60a5fa"] as const;
 
 const operatingSystem = [
-  "Fully furnished spacious rooms",
-  "Nutritious veg meals served daily",
-  "High-speed Wi-Fi & 24/7 power backup",
-  "24/7 CCTV security & warden oversight",
+  "Clear sprint roadmap",
+  "Design reviewed before build",
+  "Weekly demos and handoff notes",
+  "Launch, analytics, and support",
 ] as const;
 
 export default function WhyChoose() {
@@ -66,16 +66,16 @@ export default function WhyChoose() {
                 color: "var(--color-text-primary)",
               }}
             >
-              A living experience built for{" "}
-              <span className="gradient-text">comfort, safety, and community.</span>
+              A delivery system built for{" "}
+              <span className="gradient-text">speed without rough edges.</span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}
               className="mb-7 text-base leading-relaxed md:text-lg"
               style={{ color: "var(--color-text-secondary)" }}
             >
-              You get premium amenities, nutritious food, top-tier security, and
-              student-focused care without any hassle.
+              You get senior-level product thinking, clean implementation, and
+              launch support without the slow agency loop.
             </motion.p>
 
             <motion.div variants={cardReveal} className="section-panel p-5">
@@ -94,13 +94,13 @@ export default function WhyChoose() {
                     className="font-semibold"
                     style={{ color: "var(--color-text-primary)" }}
                   >
-                    Student living made easy
+                    Launch governance included
                   </p>
                   <p
                     className="text-sm"
                     style={{ color: "var(--color-text-muted)" }}
                   >
-                    Every resident gets the best room and services.
+                    Every project gets a visible path to release.
                   </p>
                 </div>
               </div>

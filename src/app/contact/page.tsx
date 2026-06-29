@@ -26,7 +26,7 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `Hi Shree Shyam Living! I'm ${formData.name}. Message: ${formData.message}`;
+    const text = `Hi Webvorn! I'm ${formData.name} from ${formData.company || "N/A"}. Budget: ${formData.budget || "N/A"}. Message: ${formData.message}`;
     window.open(
       `https://wa.me/${CONTACT_INFO.whatsappRaw}?text=${encodeURIComponent(text)}`,
       "_blank"

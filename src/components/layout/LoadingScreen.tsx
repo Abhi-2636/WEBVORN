@@ -60,13 +60,13 @@ export default function LoadingScreen() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (window.sessionStorage.getItem("ssliving-loaded") === "true") {
+    if (window.sessionStorage.getItem("webvorn-loaded") === "true") {
       const skipTimer = window.setTimeout(() => setLoading(false), 0);
       return () => window.clearTimeout(skipTimer);
     }
 
     const fallbackTimer = window.setTimeout(() => {
-      window.sessionStorage.setItem("ssliving-loaded", "true");
+      window.sessionStorage.setItem("webvorn-loaded", "true");
       setLoading(false);
     }, 2500);
 
@@ -74,7 +74,7 @@ export default function LoadingScreen() {
 
     if (prefersReduced) {
       const reducedTimer = window.setTimeout(() => {
-        window.sessionStorage.setItem("ssliving-loaded", "true");
+        window.sessionStorage.setItem("webvorn-loaded", "true");
         setLoading(false);
       }, 400);
       return () => {
@@ -88,7 +88,7 @@ export default function LoadingScreen() {
       onComplete: () => {
         window.clearTimeout(fallbackTimer);
         setBurst(true);
-        window.sessionStorage.setItem("ssliving-loaded", "true");
+        window.sessionStorage.setItem("webvorn-loaded", "true");
         window.setTimeout(() => setLoading(false), 500);
       },
     });
@@ -188,7 +188,7 @@ export default function LoadingScreen() {
                   className="font-bold text-4xl text-[#07100d]"
                   style={{ fontFamily: "var(--font-outfit)" }}
                 >
-                  S
+                  W
                 </span>
               </motion.div>
             </div>
@@ -199,7 +199,7 @@ export default function LoadingScreen() {
               className="text-3xl font-bold"
               style={{ fontFamily: "var(--font-outfit)", color: "var(--color-text-primary)" }}
             >
-              Shree Shyam Living
+              Webvorn
             </span>
 
             {/* Progress bar */}
