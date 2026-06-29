@@ -193,7 +193,6 @@ export const TECH_STACK = [
   { name: "Express", color: "#ffffff" },
   { name: "MongoDB", color: "#47A248" },
   { name: "Flutter", color: "#02569B" },
-  { name: "Firebase", color: "#FFCA28" },
   { name: "AWS", color: "#FF9900" },
   { name: "Docker", color: "#2496ED" },
   { name: "OpenAI", color: "#412991" },
@@ -303,7 +302,7 @@ export const FAQS = [
   {
     question: "What technologies do you use?",
     answer:
-      "We use modern, industry-standard technologies including React, Next.js, Node.js, Flutter, Firebase, AWS, Docker, and more. Our tech stack is chosen to ensure scalability, performance, and maintainability.",
+      "We use modern, industry-standard technologies including React, Next.js, Node.js, Flutter, AWS, Docker, and more. Our tech stack is chosen to ensure scalability, performance, and maintainability.",
   },
   {
     question: "Do you work with international clients?",
